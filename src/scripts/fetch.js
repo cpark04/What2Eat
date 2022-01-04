@@ -30,7 +30,7 @@ export class Fetch {
       this.getRecipeData(data.results[0].id);
     })
     .catch(err => {
-      console.error('recipe not found', err);
+      console.error(alert('recipe not found'), err);
     });
 
     // fetch(`https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?ingredients=${ingredients}&number=20&ignorePantry=true&ranking=1`, {
