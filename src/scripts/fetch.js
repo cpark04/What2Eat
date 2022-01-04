@@ -27,7 +27,7 @@ export class Fetch {
     .then(response => response.json())
     .then((data) => {
       console.log(data);
-      this.getRecipeData(data.results[0].id);
+      this.getRecipeData(data.results[Math.floor(Math.random() * data.results.length)].id);
     })
     .catch(err => {
       console.error(alert('recipe not found'), err);
