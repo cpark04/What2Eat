@@ -1,16 +1,7 @@
 export class Util {
   
-  dropCheckbox(){
-    let ingredCheckList = document.getElementById('ingred-select');
-    ingredCheckList.getElementsByClassName('anchor')[0].onclick = function(evt) {
-      if (ingredCheckList.classList.contains('visible')) ingredCheckList.classList.remove('visible');
-      else ingredCheckList.classList.add('visible');
-    }
-  }
-  
   ingredientCheckbox(ingredients) {
     let select = document.querySelector(".select-box");
-    console.log(select)
     ingredients.forEach((ingredient) => {
       let option = document.createElement('option');
       option.setAttribute('class', 'ingred-checkbox');
@@ -34,13 +25,17 @@ export class Util {
 
   getMealData(mealData){
     this.clearData();
-    console.log(mealData)
+    console.log(mealData);
     let title = mealData.title;
     let ingredients = [];
     let directions = [];
+    let sourceURL = mealData.sourceUrl;
     let picture = mealData.image;
-    console.log(mealData.analyzedInstructions[0])
-    mealData.analyzedInstructions[0].steps.forEach((instruction) => directions.push(instruction.step))
+    if (mealData.analyzedInstructions.length < 1) {
+      directions = [`Sorry, this recipe has no instructions. Please try the source page at ${sourceURL}`];
+    } else {
+      mealData.analyzedInstructions[0].steps.forEach((instruction) => directions.push(instruction.step));
+    }
     mealData.extendedIngredients.forEach((ingred) => ingredients.push(ingred.originalString))
     this.renderPicture(picture);
     this.renderTitle(title);

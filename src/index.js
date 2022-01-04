@@ -5,9 +5,10 @@ let util = new Util();
 let fetch = new Fetch();
 
 document.addEventListener("DOMContentLoaded", async () => {
-  util.dropCheckbox();
   await fetch.getIngredients();
-  new Choices('#select-box')
+  new Choices('#select-box', {
+    placeholderValue: "search for ingredients"
+  })
   // util.ingredientCheckbox();
   // fetch.getCategories();
   // let ingredientList = await fetch.getIngredients();
@@ -32,11 +33,9 @@ function paramSearchClick(e) {
 
 function ingredientParams(){
   let ingredients = [];
-  console.log(document.querySelectorAll('.choices_inner'))
   document.querySelectorAll('select.select-box option').forEach((ingred) => {
     ingredients.push(ingred.value)
   });
-  console.log(ingredients)
   return ingredients
 }
 

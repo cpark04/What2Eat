@@ -42,7 +42,17 @@ nav{
   height: 130px;
   border: 1px rgb(249, 145, 145) solid;
   border-radius: 20px;
-  
+}
+
+#filter-box-render{
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  justify-content: center;
+  width: 1000px;
+  height: 130px;
+  border: 1px rgb(249, 145, 145) solid;
+  border-radius: 20px;
 }
 
 .choices{
@@ -112,64 +122,11 @@ nav{
   align-self: center;
 }
 
-#checkbox-form{
-  display: inline-flex;
-}
+
 
 #search-submit{
   // height: 34px;
   justify-self: center;
-}
-
-.dropdown-check-list {
-  height: 150px;
-  width: 200px;
-  overflow: auto;
-  display: inline-block;
-}
-
-.dropdown-check-list .anchor {
-  position: relative;
-  cursor: pointer;
-  display: inline-block;
-  padding: 8px 50px 8px 10px;
-  border: 1px solid #ccc;
-}
-
-.dropdown-check-list .anchor:after {
-  position: absolute;
-  content: "";
-  border-left: 2px solid black;
-  border-top: 2px solid black;
-  padding: 5px;
-  right: 10px;
-  top: 20%;
-  -moz-transform: rotate(-135deg);
-  -ms-transform: rotate(-135deg);
-  -o-transform: rotate(-135deg);
-  -webkit-transform: rotate(-135deg);
-  transform: rotate(-135deg);
-}
-
-.dropdown-check-list .anchor:active:after {
-  right: 8px;
-  top: 21%;
-}
-
-.dropdown-check-list ul.items {
-  padding: 2px;
-  display: none;
-  margin: 0;
-  border: 1px solid #ccc;
-  border-top: none;
-}
-
-.dropdown-check-list ul.items li {
-  list-style: none;
-}
-
-.dropdown-check-list.visible .items {
-  display: block;
 }
 
 input[type=submit], select{
