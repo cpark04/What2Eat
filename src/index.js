@@ -10,8 +10,13 @@ document.addEventListener("DOMContentLoaded", async () => {
     placeholderValue: "search for ingredients",
     allowHTML: true
   })
+  modalToggle();
   bindEvents();  
 });
+
+
+
+
 
 function bindEvents(){
   document.getElementById('select-box-form').addEventListener('submit', e => getIngredClick(e));
@@ -51,11 +56,30 @@ function toggleFilter(e) {
   ingredButton.classList.toggle('hide');
 }
 
-
 function ingredientParams(){
   let ingredients = [];
   document.querySelectorAll('select.select-box option').forEach((ingred) => {
     ingredients.push(ingred.value)
   });
   return ingredients
+}
+
+function modalToggle(){
+  var modal = document.getElementById("myModal");
+  var btn = document.getElementById("ingred-button");
+  var span = document.getElementsByClassName("close")[0];
+
+  btn.onclick = function() {
+    modal.style.display = "block";
+  }
+  span.onclick = function() {
+    modal.style.display = "none";
+    util.clearData();
+  }
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+      util.clearData();
+    }
+  }
 }

@@ -27,11 +27,11 @@
       <form action="" id="select-box-form">
         <select class="select-box" name="demo-2" id="select-box" multiple>
         </select>
-        <input type="submit" id="ingred-button" value="Recommend a Recipe">
+        <input type="submit" id="ingred-button" class="button" value="Recommend a Recipe">
+        <button id="filter-button" class='button'>Need more options?</button>
       </form>
-      <button id="filter-button">Need more options?</button>
     </div>
-
+    
     <div id="filter-box-render" class='hide'>
       <form action="">
         <label for="">Max Calories
@@ -56,25 +56,32 @@
       </form>
     </div>
 
-    <div id="title-render" class='hide show'></div>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
 
-    <div id="pic-ingred-render" class='hide show'>
-      <div id="picture" class="pic-ingred1"></div>
+        <div id="title-render"></div>
+    
+        <div id="pic-ingred-render">
+          <div id="picture" class="pic-ingred1"></div>
+    
+          <div id="measurements" class="pic-ingred2">
+            <ul id="ingredient-list"></ul>
+          </div>
+        </div>
+    
+        <div id="info-render">
+          <div id="nutrition">
+            
+          </div>
+          <div id="directions">
+            <ol id="directions-list"></ol>
+          </div>
+    
+    
+        </div>
 
-      <div id="measurements" class="pic-ingred2">
-        <ul id="ingredient-list"></ul>
       </div>
-    </div>
-
-    <div id="info-render" class='hide show'>
-      <div id="nutrition">
-        
-      </div>
-      <div id="directions">
-        <ol id="directions-list"></ol>
-      </div>
-
-
     </div>
 
   </section>
