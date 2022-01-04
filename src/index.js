@@ -14,11 +14,16 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 function bindEvents(){
-  document.getElementById('select-box-form').addEventListener('submit', e => checkboxSearchClick(e));
+  document.getElementById('select-box-form').addEventListener('submit', e => getIngredClick(e));
   document.getElementById('filter-button').addEventListener('click', e => toggleFilter(e))
+  document.getElementById('complex-button').addEventListener('click', e => getComplexClick(e))
 }
 
-function checkboxSearchClick(e) {
+function getComplexClick(e) {
+  let maxCal = 
+}
+
+function getIngredClick(e) {
   e.preventDefault();
   let ingredients = ingredientParams();
   fetch.findRecipeID(ingredients);
@@ -32,9 +37,6 @@ function toggleFilter(e) {
   ingredButton.classList.toggle('hide');
 }
 
-function paramSearchClick(e) {
-  e.preventDefault();
-}
 
 function ingredientParams(){
   let ingredients = [];
@@ -43,12 +45,3 @@ function ingredientParams(){
   });
   return ingredients
 }
-
-// function categoryParams(){
-//   let category;
-//   document.querySelectorAll('.category-option').forEach((option) => {
-//     if (option.selected) category = option.value;
-//   });
-//   console.log(category);
-//   return category;
-// }
