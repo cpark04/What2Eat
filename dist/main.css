@@ -1,9 +1,10 @@
-/*!********************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/styles/index.scss ***!
-  \********************************************************************************************************************************************/
+/*!*************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
+  \*************************************************************************************************************************************/
 body {
   font-family: "Noto Sans Display", sans-serif;
   font-family: "Open Sans", sans-serif;
+  background-color: #fdf8fe;
 }
 
 header {
@@ -18,18 +19,52 @@ nav {
   justify-content: center;
 }
 
-#param-render {
+#picture img {
+  width: 480px;
+  height: 480x;
+  border-radius: 20%;
+}
+
+#checkbox-render {
   display: flex;
   margin-right: auto;
   margin-left: auto;
   justify-content: center;
   width: 1000px;
-  height: 150px;
+  height: 40px;
   border: 1px #f99191 solid;
   border-radius: 20px;
 }
 
+#select-box-render {
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  justify-content: center;
+  width: 1000px;
+  height: 130px;
+  border: 1px #f99191 solid;
+  border-radius: 20px;
+}
+
+.choices {
+  width: 500px;
+}
+
 #title-render {
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  justify-content: center;
+  width: 1000px;
+  height: 50px;
+  border: 1px #f99191 solid;
+  border-radius: 20px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#region-render {
   display: flex;
   margin-right: auto;
   margin-left: auto;
@@ -47,7 +82,7 @@ nav {
   margin-left: auto;
   justify-content: space-evenly;
   width: 1000px;
-  height: 400px;
+  height: 500px;
   border: 1px #f99191 solid;
   border-radius: 20px;
 }
@@ -58,7 +93,7 @@ nav {
   margin-left: auto;
   justify-content: space-evenly;
   width: 1000px;
-  height: 500px;
+  height: 600px;
   border: 1px #f99191 solid;
   border-radius: 20px;
 }
@@ -78,12 +113,11 @@ nav {
   align-self: center;
 }
 
-#param-form {
+#checkbox-form {
   display: inline-flex;
 }
 
 #search-submit {
-  height: 34px;
   justify-self: center;
 }
 
@@ -98,7 +132,7 @@ nav {
   position: relative;
   cursor: pointer;
   display: inline-block;
-  padding: 5px 50px 5px 10px;
+  padding: 8px 50px 8px 10px;
   border: 1px solid #ccc;
 }
 
@@ -138,7 +172,7 @@ nav {
   display: block;
 }
 
-input[type=submit] {
+input[type=submit], select {
   font-family: "Noto Sans Display", sans-serif;
   font-family: "Open Sans", sans-serif;
 }

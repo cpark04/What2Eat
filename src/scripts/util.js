@@ -1,44 +1,53 @@
 export class Util {
   
   dropCheckbox(){
-    var checkList = document.getElementById('list1');
-    checkList.getElementsByClassName('anchor')[0].onclick = function(evt) {
-      if (checkList.classList.contains('visible')) checkList.classList.remove('visible');
-      else checkList.classList.add('visible');
+    let ingredCheckList = document.getElementById('ingred-select');
+    ingredCheckList.getElementsByClassName('anchor')[0].onclick = function(evt) {
+      if (ingredCheckList.classList.contains('visible')) ingredCheckList.classList.remove('visible');
+      else ingredCheckList.classList.add('visible');
     }
   }
   
-  getMealData(mealData){
-    console.log(mealData);
-    let title = mealData.strMeal;
-    console.log(title);
-    let area = mealData.strArea;
-    let ingredients = [];
-    let measurements = [];
-    let directions = mealData.strInstructions;
-    let ytVideo = mealData.strYoutube;
-    let picture = mealData.strMealThumb;
-    Object.keys(mealData).forEach((prop) => {
-      if (mealData[prop] && prop.includes('strIngredient')) ingredients.push(mealData[prop]);
-      if (mealData[prop] && prop.includes('strMeasure')) measurements.push(mealData[prop]);
-    })
-    this.renderPicture(picture);
-    this.renderTitle(title);
-    this.renderMeasurements(measurements, ingredients);
-    this.renderDirections(directions);
-    console.log(directions);
-  }
-  
   ingredientCheckbox(ingredients) {
+    let select = document.querySelector(".select-box");
+    console.log(select)
     ingredients.forEach((ingredient) => {
-      let ul = document.querySelector("ul.items");
-      let li = document.createElement('li');
-      let value = ingredient.strIngredient.split(' ').map((word) => word.toLowerCase()).join('_');
-      li.innerHTML = `<input class='ingred-checkbox' type='checkbox' value=${value} />${ingredient.strIngredient}`;
-      ul.append(li);
-    })
+      let option = document.createElement('option');
+      option.setAttribute('class', 'ingred-checkbox');
+      option.setAttribute('value', ingredient);
+      option.innerHTML = ingredient;
+      select.append(option);
+    });
   }
 
+  categoryDropdown(catArr) {
+    catArr.forEach((category) => {
+      let select = document.querySelector("#category-select");
+      let value = category.strCategory;
+      let option = document.createElement('option');
+      option.setAttribute('value', value);
+      option.setAttribute('class', 'category-option');
+      option.innerText = value;
+      select.append(option);
+    });
+  }
+
+  getMealData(mealData){
+    this.clearData();
+    console.log(mealData)
+    let title = mealData.title;
+    let ingredients = [];
+    let directions = [];
+    let picture = mealData.image;
+    console.log(mealData.analyzedInstructions[0])
+    mealData.analyzedInstructions[0].steps.forEach((instruction) => directions.push(instruction.step))
+    mealData.extendedIngredients.forEach((ingred) => ingredients.push(ingred.originalString))
+    this.renderPicture(picture);
+    this.renderTitle(title);
+    this.renderIngredients(ingredients);
+    this.renderDirections(directions);
+  }
+  
   renderPicture(picture) {
     let div = document.querySelector("#picture");
     let img = document.createElement('img');
@@ -51,15 +60,10 @@ export class Util {
     section.innerText = title;
   }
 
-  renderMeasurements(measurements, ingredients) {
-    let ingredMeasure = [];
-    measurements.forEach((el1, i) => {
-      ingredients.forEach((el2, j) => {
-        if (i === j) ingredMeasure.push(el1 + ' ' + el2);
-      })
-    })
-    ingredMeasure.forEach((el) => {
-      let ul = document.querySelector('#ingredient-list');
+  renderIngredients(ingredients) {
+    let ul = document.querySelector('#ingredient-list');
+    ul.append("Ingredients:")
+    ingredients.forEach((el) => {
       let li = document.createElement('li');
       li.innerText = el;
       ul.append(li);
@@ -67,10 +71,23 @@ export class Util {
   }
 
   renderDirections(directions){
-    let div = document.querySelector('#directions');
-    div.innerHTML = directions;
+    let ol = document.querySelector('#directions-list');
+    directions.forEach((dir) => {
+      let li = document.createElement('li');
+      li.innerText = dir;
+      ol.append(li);
+    })
+    // let div = document.getElementById('directions');
+    // div.innerText = directions;
+
   }
 
-
+  clearData(){
+    let ids = ['title-render', 'picture', 'ingredient-list', 'directions-list'];
+    ids.forEach((id) => {
+      let div = document.getElementById(`${id}`);
+      div.innerText = "";
+    })
+  }
 
 }
