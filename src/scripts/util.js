@@ -65,6 +65,8 @@ export class Util {
     })
   }
 
+  renderNutrition(nutrition)
+
   renderDirections(directions){
     let ol = document.querySelector('#directions-list');
     directions.forEach((dir) => {

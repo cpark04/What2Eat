@@ -21,15 +21,16 @@ function bindEvents(){
 
 function getComplexClick(e) {
   e.preventDefault();
-  let ingredientsArr = ingredientParams();
-  let maxCal = document.getElementById('max-cal').value;
-  let maxSodium = document.getElementById('max-sodium').value;
-  let maxSugar = document.getElementById('max-sugar').value;
-  let maxChol = document.getElementById('max-chol').value;
-  let maxFat = document.getElementById('max-fat').value;
-  let maxCarbs = document.getElementById('max-carbs').value;
-  console.log(maxChol)
-  fetch.findComplexID([ingredientsArr, maxCal, maxSodium, maxSugar, maxChol, maxFat, maxCarbs])
+  let params = {}
+  params['includeIngredients'] = ingredientParams();
+  params['maxCalories'] = document.getElementById('max-cal').value;
+  params['maxSodium'] = document.getElementById('max-sodium').value;
+  params['maxSugar'] = document.getElementById('max-sugar').value;
+  params['maxCholesterol'] = document.getElementById('max-chol').value;
+  params['maxFat'] = document.getElementById('max-fat').value;
+  params['maxCarbs'] = document.getElementById('max-carbs').value;
+  console.log(params)
+  fetch.findComplexID(params)
 }
 
 function getIngredClick(e) {

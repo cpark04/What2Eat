@@ -15,24 +15,17 @@ export class Fetch {
     util.ingredientCheckbox(ingredients);
   }
 
-  findComplexID(paramsArr){
-    let includeIngredients = "";
-    let maxCalories = "";
-    let maxSodium = "";
-    let maxSugar = "";
-    let maxCholesterol = "";
-    let maxFat = "";
-    let maxCarbs = "";
-    if (paramsArr[0].length >= 1){
-      includeIngredients = `&includeIngredients=${encodeURIComponent(paramsArr[0])}`
-    }
-    for (let i = 1; i < paramsArr.length; i++) {
-      if (paramsArr[i] !== ""){
-        let 
+  findComplexID(params){
+    
+    for (let key in params){
+      if (key === 'includeIngredients' && params[key].length > 0){
+        params[key] = `&${key}=${encodeURIComponent(params[key])}`;
+      } else if (key !== 'includeIngredients' && params[key] !== "") {
+        params[key] = `&${key}=${params[key]}`;
       }
     }
-    let ingredients = encodeURIComponent(ingredientsArr);
-    fetch(`https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/searchComplex?number=20&ranking=2&instructionsRequired=true${includeIngredients}${maxCalories}${maxSodium}${maxSugar}${maxCholesterol}${maxFat}${maxCarbs}`, {
+
+    fetch(`https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/searchComplex?number=20&ranking=2&instructionsRequired=true${params['includeIngredients']}${params['maxCalories']}${params['maxSodium']}${params['maxSugar']}${params['maxCholesterol']}${params['maxFat']}${params['maxCarbs']}`, {
       "method": "GET",
       "headers": {
         "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
@@ -42,7 +35,15 @@ export class Fetch {
     .then(response => response.json())
     .then((data) => {
       console.log(data);
-      this.getRecipeData(data.results[Math.floor(Math.random() * data.results.length)].id);
+      let randomRecipe = data.results[Math.floor(Math.random() * data.results.length)]
+      let recipeID = randomRecipe.id
+      let nutrition = {
+        'calories': randomRecipe.calories,
+        'carbs': randomRecipe.carbs,
+        'fat': randomRecipe.fat
+      };
+      util.renderNutrition(nutrition)
+      this.getRecipeData(recipeID);
     })
     .catch(err => {
       console.error(alert('recipe not found'), err);
