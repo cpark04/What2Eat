@@ -29,8 +29,8 @@ nav{
   justify-content: center;
   width: 1000px;
   height: 40px;
-  border: 1px rgb(249, 145, 145) solid;
-  border-radius: 20px;
+  // border: 1px rgb(249, 145, 145) solid;
+  // border-radius: 20px;
 }
 
 #select-box-render{
@@ -40,8 +40,8 @@ nav{
   justify-content: center;
   width: 1000px;
   height: 130px;
-  border: 1px rgb(249, 145, 145) solid;
-  border-radius: 20px;
+  // border: 1px rgb(249, 145, 145) solid;
+  // border-radius: 20px;
 }
 #button{
   display:inline-flex;
@@ -55,8 +55,8 @@ nav{
   justify-content: center;
   width: 1000px;
   height: 150px;
-  border: 1px rgb(249, 145, 145) solid;
-  border-radius: 20px;
+  // border: 1px rgb(249, 145, 145) solid;
+  // border-radius: 20px;
 }
 
 .choices{
@@ -65,13 +65,14 @@ nav{
 
 #title-render{
   display: flex;
+  margin-top: 50px;
   margin-right: auto;
   margin-left: auto;
   justify-content: center;
   width: 1000px;
   height: 50px;
-  border: 1px rgb(249, 145, 145) solid;
-  border-radius: 20px;
+  // border: 1px rgb(249, 145, 145) solid;
+  // border-radius: 20px;
   font-size: 30px;
   font-weight: bold;
 }
@@ -83,8 +84,8 @@ nav{
   justify-content: center;
   width: 1000px;
   height: 50px;
-  border: 1px rgb(249, 145, 145) solid;
-  border-radius: 20px;
+  // border: 1px rgb(249, 145, 145) solid;
+  // border-radius: 20px;
   font-size: 30px;
 }
 
@@ -95,8 +96,8 @@ nav{
   justify-content: space-evenly;
   width: 1000px;
   height: 500px;
-  border: 1px rgb(249, 145, 145) solid;
-  border-radius: 20px;
+  // border: 1px rgb(249, 145, 145) solid;
+  // border-radius: 20px;
 }
 
 #info-render{
@@ -106,14 +107,16 @@ nav{
   justify-content: space-evenly;
   width: 1000px;
   height: 600px;
-  border: 1px rgb(249, 145, 145) solid;
-  border-radius: 20px;
+  // border: 1px rgb(249, 145, 145) solid;
+  // border-radius: 20px;
+}
+
+#directions{
+  margin: 20px;
 }
 
 .pic-ingred1{
   display: inline-flex;
-  // border: 1px rgb(249, 145, 145) solid;
-  // border-radius: 20px;
   justify-self: center;
   align-self: center;
   max-width: 100%;
@@ -129,7 +132,6 @@ nav{
 
 
 #search-submit{
-  // height: 34px;
   justify-self: center;
 }
 

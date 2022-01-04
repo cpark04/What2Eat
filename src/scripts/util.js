@@ -51,8 +51,11 @@ export class Util {
   }
 
   renderTitle(title) {
-    let section = document.querySelector('#title-render');
-    section.innerText = title;
+    let div = document.querySelector('#title-render');
+    let span = document.createElement('span');
+    span.setAttribute('class', 'title');
+    span.innerHTML = title;
+    div.append(span);
   }
 
   renderIngredients(ingredients) {
@@ -65,14 +68,22 @@ export class Util {
     })
   }
 
-  renderNutrition(nutrition)
+  renderNutrition(nutrition) {
+
+  }
 
   renderDirections(directions){
-    let ol = document.querySelector('#directions-list');
+    let div = document.querySelector('#directions');
+    let ol = document.createElement('ol');
+    ol.setAttribute('id', 'directions-list');
+    div.append('Directions:');
+    div.append(ol);
+
+    let newOl = document.querySelector('#directions-list')
     directions.forEach((dir) => {
       let li = document.createElement('li');
       li.innerText = dir;
-      ol.append(li);
+      newOl.append(li);
     })
     // let div = document.getElementById('directions');
     // div.innerText = directions;
@@ -80,7 +91,7 @@ export class Util {
   }
 
   clearData(){
-    let ids = ['title-render', 'picture', 'ingredient-list', 'directions-list'];
+    let ids = ['title-render', 'picture', 'ingredient-list', 'directions'];
     ids.forEach((id) => {
       let div = document.getElementById(`${id}`);
       div.innerText = "";

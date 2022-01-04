@@ -21,6 +21,8 @@ function bindEvents(){
 
 function getComplexClick(e) {
   e.preventDefault();
+  let hiddenBox = document.querySelectorAll('.show');
+  hiddenBox.forEach(el => el.classList.remove('hide'));
   let params = {}
   params['includeIngredients'] = ingredientParams();
   params['maxCalories'] = document.getElementById('max-cal').value;
@@ -35,6 +37,8 @@ function getComplexClick(e) {
 
 function getIngredClick(e) {
   e.preventDefault();
+  let hiddenBox = document.querySelectorAll('.show');
+  hiddenBox.forEach(el => el.classList.remove('hide'));
   let ingredients = ingredientParams();
   fetch.findRecipeID(ingredients);
 }
