@@ -15,6 +15,40 @@ export class Fetch {
     util.ingredientCheckbox(ingredients);
   }
 
+  findComplexID(paramsArr){
+    let includeIngredients = "";
+    let maxCalories = "";
+    let maxSodium = "";
+    let maxSugar = "";
+    let maxCholesterol = "";
+    let maxFat = "";
+    let maxCarbs = "";
+    if (paramsArr[0].length >= 1){
+      includeIngredients = `&includeIngredients=${encodeURIComponent(paramsArr[0])}`
+    }
+    for (let i = 1; i < paramsArr.length; i++) {
+      if (paramsArr[i] !== ""){
+        let 
+      }
+    }
+    let ingredients = encodeURIComponent(ingredientsArr);
+    fetch(`https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/searchComplex?number=20&ranking=2&instructionsRequired=true${includeIngredients}${maxCalories}${maxSodium}${maxSugar}${maxCholesterol}${maxFat}${maxCarbs}`, {
+      "method": "GET",
+      "headers": {
+        "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+        "x-rapidapi-key": "2cc4db5fb2msh8f17f4281122426p16f2aejsn5bf0f65021ab"
+      }
+    })
+    .then(response => response.json())
+    .then((data) => {
+      console.log(data);
+      this.getRecipeData(data.results[Math.floor(Math.random() * data.results.length)].id);
+    })
+    .catch(err => {
+      console.error(alert('recipe not found'), err);
+    });
+  }
+
   findRecipeID(ingredientsArr){
     let ingredients = encodeURIComponent(ingredientsArr);
     fetch(`https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?instructionsRequired=true&ranking=2&addRecipeInformation=true&number=20&includeIngredients=${ingredients}`, {
@@ -32,23 +66,6 @@ export class Fetch {
     .catch(err => {
       console.error(alert('recipe not found'), err);
     });
-
-    // fetch(`https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?ingredients=${ingredients}&number=20&ignorePantry=true&ranking=1`, {
-    //   "method": "GET",
-    //   "headers": {
-    //     "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-    //     "x-rapidapi-key": "2cc4db5fb2msh8f17f4281122426p16f2aejsn5bf0f65021ab"
-    //   }
-    // })
-    // .then(response => response.json())
-    // .then((data) => {
-    //   // let idArr = Array.from(data).map((recipe) => recipe.id)
-    //   // console.log(idArr)
-    //   this.getRecipeData(data[0].id);
-    // })
-    // .catch(err => {
-    //   console.error(err);
-    // });
   }
 
   getRecipeData(id){
