@@ -5,7 +5,7 @@ export class Fetch {
   
   async getIngredients(){
     const ingredients = [];
-    const response = await fetch('/src/data/ingred_list.csv');
+    const response = await fetch('https://spoonacular.com/application/frontend/downloads/top-1k-ingredients.csv');
     const data = await response.text();
     const table = data.split('\n');
     table.forEach((el) => {
