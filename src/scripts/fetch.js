@@ -17,7 +17,7 @@ export class Fetch {
 
   findRecipeID(ingredientsArr){
     let ingredients = encodeURIComponent(ingredientsArr);
-    fetch(`https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?instructionsRequired=true&ranking=2&addRecipeInformation=true&number=5&includeIngredients=${ingredients}`, {
+    fetch(`https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?instructionsRequired=true&ranking=2&addRecipeInformation=true&number=20&includeIngredients=${ingredients}`, {
       "method": "GET",
       "headers": {
         "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",

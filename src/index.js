@@ -10,22 +10,26 @@ document.addEventListener("DOMContentLoaded", async () => {
     placeholderValue: "search for ingredients",
     allowHTML: true
   })
-  // util.ingredientCheckbox();
-  // fetch.getCategories();
-  // let ingredientList = await fetch.getIngredients();
   bindEvents();  
 });
 
 function bindEvents(){
   document.getElementById('select-box-form').addEventListener('submit', e => checkboxSearchClick(e));
-  // document.getElementById('params-form').addEventListener('submit', e => paramSearchClick(e));
+  document.getElementById('filter-button').addEventListener('click', e => toggleFilter(e))
 }
 
 function checkboxSearchClick(e) {
   e.preventDefault();
   let ingredients = ingredientParams();
-  // let category = categoryParams();
   fetch.findRecipeID(ingredients);
+}
+
+function toggleFilter(e) {
+  let filterBox = document.getElementById('filter-box-render');
+  let ingredButton = document.getElementById('ingred-button');
+  console.log(ingredButton)
+  filterBox.classList.toggle('hide');
+  ingredButton.classList.toggle('hide');
 }
 
 function paramSearchClick(e) {

@@ -27,12 +27,33 @@
       <form action="" id="select-box-form">
         <select class="select-box" name="demo-2" id="select-box" multiple>
         </select>
-        <input type="submit" value="Recommend a Recipe">
+        <input type="submit" id="ingred-button" value="Recommend a Recipe">
       </form>
+      <button id="filter-button">Need more options?</button>
     </div>
 
-    <div id="filter-box-render">
-
+    <div id="filter-box-render" class='hide'>
+      <form action="">
+        <label for="">Max Calories
+          <input type="text" id="">
+        </label>
+        <label for="">Max Sodium (mg)
+          <input type="text" id="">
+        </label>
+        <label for="">Max Sugar (g)
+          <input type="text" id="">
+        </label>
+        <label for="">Max Cholesterol (mg)
+          <input type="text" id="">
+        </label>
+        <label for="">Max Fat (g)
+          <input type="text" id="">
+        </label>
+        <label for="">Max Carbs (g)
+          <input type="text" id="">
+        </label>
+        <input type="submit" value="Search for Recipe">
+      </form>
     </div>
 
     <div id="title-render" >

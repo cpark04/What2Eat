@@ -43,6 +43,10 @@ nav{
   border: 1px rgb(249, 145, 145) solid;
   border-radius: 20px;
 }
+#button{
+  display:inline-flex;
+  height: 20%;
+}
 
 #filter-box-render{
   display: flex;
@@ -50,7 +54,7 @@ nav{
   margin-left: auto;
   justify-content: center;
   width: 1000px;
-  height: 130px;
+  height: 150px;
   border: 1px rgb(249, 145, 145) solid;
   border-radius: 20px;
 }
@@ -132,4 +136,8 @@ nav{
 input[type=submit], select{
   font-family: 'Noto Sans Display', sans-serif;
   font-family: 'Open Sans', sans-serif;
+}
+
+.hide{
+  display: none !important;
 }
