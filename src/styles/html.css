@@ -16,8 +16,8 @@ header{
 }
 
 #picture img{
-  width: 480px;
-  height: 480x;
+  /* width: 480px;
+  height: 480x; */
   border-radius: 5%;
 }
 
@@ -209,4 +209,16 @@ input[type=submit], select{
 
 .prep-text{
   font-size: small;
+  color: grey;
+}
+
+#source-url{
+  display: flex;
+  align-self: flex-end;
+  align-items: flex-end;
+  height:100px;
+}
+
+.source-url{
+  padding-right: 50px;
 }

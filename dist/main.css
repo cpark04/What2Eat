@@ -19,8 +19,8 @@ header{
 }
 
 #picture img{
-  width: 480px;
-  height: 480x;
+  /* width: 480px;
+  height: 480x; */
   border-radius: 5%;
 }
 
@@ -212,6 +212,18 @@ input[type=submit], select{
 
 .prep-text{
   font-size: small;
+  color: grey;
+}
+
+#source-url{
+  display: flex;
+  align-self: flex-end;
+  align-items: flex-end;
+  height:100px;
+}
+
+.source-url{
+  padding-right: 50px;
 }
 /*!****************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/modal.css ***!
@@ -232,9 +244,9 @@ input[type=submit], select{
 .modal-content {
   background-color: rgb(253, 248, 254);
   margin: 15% auto; 
-  padding: 20px;
+  padding: 80px;
   border: 1px solid #888;
-  width: 80%;
+  width: 1000px;
   border-radius: 30px !important;  
 }
 

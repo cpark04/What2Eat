@@ -44,6 +44,7 @@ export class Util {
     this.renderTitle(title);
     this.renderIngredients(ingredients);
     this.renderDirections(directions);
+    this.renderSource(sourceURL);
   }
   
   renderPicture(picture) {
@@ -90,8 +91,18 @@ export class Util {
     })
   }
 
+  renderSource(url){
+    let div = document.getElementById('source-url');
+    let a = document.createElement('a');
+    a.setAttribute('href', url);
+    a.setAttribute('target', '_blank');
+    a.setAttribute('class', 'source-url');
+    a.innerText = "Recipe Source";
+    div.append(a);
+  }
+
   clearData(){
-    let ids = ['title-render', 'picture', 'ingredient-list', 'directions'];
+    let ids = ['title-render', 'picture', 'ingredient-list', 'directions', 'source-url'];
     ids.forEach((id) => {
       let div = document.getElementById(`${id}`);
       div.innerText = "";
