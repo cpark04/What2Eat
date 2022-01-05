@@ -32,6 +32,7 @@ function getComplexClick(e) {
   let params = {}
   params['includeIngredients'] = ingredientParams();
   params['type'] = mealTypeParam();
+  params['cuisine'] = cuisineParam();
   params['maxCalories'] = document.getElementById('max-cal').value;
   params['maxSodium'] = document.getElementById('max-sodium').value;
   params['maxSugar'] = document.getElementById('max-sugar').value;
@@ -70,11 +71,18 @@ function ingredientParams(){
 
 function mealTypeParam(){
   let mealType;
-  document.querySelectorAll('#filter-form select option').forEach((el) => {
+  document.querySelectorAll('#meal-type-list option').forEach((el) => {
     if (el.selected) mealType = el.value;
   })
-  console.log(mealType);
   return mealType;
+}
+
+function cuisineParam(){
+  let cuisine;
+  document.querySelectorAll('#cuisine-list option').forEach((el) => {
+    if (el.selected) cuisine = el.value;
+  })
+  return cuisine;
 }
 
 function modalToggle(){

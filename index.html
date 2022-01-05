@@ -38,7 +38,7 @@
     <div id="filter-box-render" class='hide'>
       <form action="" id="filter-form">
         <label for="">Meal Type
-          <select name="" id="">
+          <select name="" id="meal-type-list">
             <option value="main course">Main Course</option>
             <option value="side dish">Side Dish</option>
             <option value="dessert">Dessert</option>
@@ -52,24 +52,61 @@
             <option value="drink">Drink</option>
           </select>
         </label>
+
+        <label for="">Cuisine
+          <select name="" id="cuisine-list">
+            <option value="african">African</option>
+            <option value="chinese">Chinese</option>
+            <option value="japanese">Japanese</option>
+            <option value="korean">Korean</option>
+            <option value="vietnamese">Vietnamese</option>
+            <option value="thai">Thai</option>
+            <option value="indian">Indian</option>
+            <option value="british">British</option>
+            <option value="irish">Irish</option>
+            <option value="french">French</option>
+            <option value="italian">Italian</option>
+            <option value="mexican">Mexican</option>
+            <option value="spanish">Spanish</option>
+            <option value="middle eastern">Middle Eastern</option>
+            <option value="jewish">Jewish</option>
+            <option value="american">American</option>
+            <option value="cajun">Cajun</option>
+            <option value="southern">Southern</option>
+            <option value="greek">Greek</option>
+            <option value="german">German</option>
+            <option value="nordic">Nordic</option>
+            <option value="eastern">Eastern</option>
+            <option value="european">European</option>
+            <option value="caribbean">Caribbean</option>
+            <option value="latin american">Latin American</option>
+          </select>
+        </label>
+
         <label for="">Max Calories
           <input type="text" id="max-cal">
         </label>
+
         <label for="">Max Sodium (mg)
           <input type="text" id="max-sodium">
         </label>
+
         <label for="">Max Sugar (g)
           <input type="text" id="max-sugar">
         </label>
+
         <label for="">Max Cholesterol (mg)
           <input type="text" id="max-chol">
         </label>
+
         <label for="">Max Fat (g)
           <input type="text" id="max-fat">
         </label>
+
         <label for="">Max Carbs (g)
           <input type="text" id="max-carbs">
         </label>
+
         <input type="submit" id="complex-button" class='button' value="Search for Recipe">
       </form>
     </div>
@@ -107,11 +144,9 @@
         <div id="info-render">
 
           <div id="ingredients">
-            <ul id="ingredient-list"></ul>
           </div>
 
           <div id="directions">
-            <ol id="directions-list"></ol>
           </div>
     
     

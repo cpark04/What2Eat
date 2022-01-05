@@ -65,7 +65,11 @@ export class Util {
 
   renderIngredients(ingredients) {
     let div = document.querySelector('#ingredients')
-    let ul = document.querySelector('#ingredient-list');
+    // let ul = document.querySelector('#ingredient-list');
+    let ul = document.createElement('ul');
+    ul.setAttribute('id', 'ingredient-list');
+    div.append('Ingredients:');
+    div.append(ul);
     ingredients.forEach((el) => {
       let li = document.createElement('li');
       li.innerText = el;
@@ -77,9 +81,9 @@ export class Util {
     let timeNumber = document.getElementById('time-number');
     let readyNumber = document.getElementById('ready-number');
     let servingsNumber = document.getElementById('servings-number');
-    timeNumber.innerText = prepTime;
-    readyNumber.innerText = cookTime;
-    servingsNumber.innerText = servings;
+    !prepTime ? timeNumber.innerText = "N/A" : timeNumber.innerText = prepTime;
+    !cookTime ? readyNumber.innerText = "N/A" : readyNumber.innerText = cookTime;
+    !servings ? servingsNumber.innerText = "N/A" : servingsNumber.innerText = servings;
   }
 
   renderDirections(directions){
@@ -108,7 +112,7 @@ export class Util {
   }
 
   clearData(){
-    let ids = ['title-render', 'picture', 'ingredient-list', 'directions', 'source-url',
+    let ids = ['title-render', 'picture', 'ingredients', 'directions', 'source-url',
       'time-number', 'ready-number', 'servings-number'];
     ids.forEach((id) => {
       let div = document.getElementById(`${id}`);

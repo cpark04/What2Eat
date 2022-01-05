@@ -24,7 +24,7 @@ export class Fetch {
       }
     }
 
-    fetch(`https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/searchComplex?number=20&ranking=2&instructionsRequired=true${params['includeIngredients']}${params['maxCalories']}${params['maxSodium']}${params['maxSugar']}${params['maxCholesterol']}${params['maxFat']}${params['maxCarbs']}${params['type']}`, {
+    fetch(`https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/searchComplex?number=8&ranking=1&instructionsRequired=true${params['includeIngredients']}${params['maxCalories']}${params['maxSodium']}${params['maxSugar']}${params['maxCholesterol']}${params['maxFat']}${params['maxCarbs']}${params['type']}${params['cuisine']}`, {
       "method": "GET",
       "headers": {
         "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
