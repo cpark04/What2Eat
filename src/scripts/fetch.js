@@ -34,15 +34,7 @@ export class Fetch {
     .then(response => response.json())
     .then((data) => {
       console.log(data);
-      let randomRecipe = data.results[Math.floor(Math.random() * data.results.length)]
-      let recipeID = randomRecipe.id
-      let nutrition = {
-        'calories': randomRecipe.calories,
-        'carbs': randomRecipe.carbs,
-        'fat': randomRecipe.fat
-      };
-      util.renderNutrition(nutrition)
-      this.getRecipeData(recipeID);
+      this.getRecipeData(data.results[Math.floor(Math.random() * data.results.length)].id);
     })
     .catch(err => {
       console.error(alert('recipe not found'), err);
@@ -84,5 +76,5 @@ export class Fetch {
         console.error(err);
       });
   }
-  
+
 }
