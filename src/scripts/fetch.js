@@ -21,11 +21,11 @@ export class Fetch {
       if (key === 'includeIngredients' && params[key].length > 0){
         params[key] = `&${key}=${encodeURIComponent(params[key])}`;
       } else if (key !== 'includeIngredients' && params[key] !== "") {
-        params[key] = `&${key}=${params[key]}`;
+        params[key] = `&${key}=${encodeURIComponent(params[key])}`;
       }
     }
 
-    fetch(`https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/searchComplex?number=20&ranking=2&instructionsRequired=true${params['includeIngredients']}${params['maxCalories']}${params['maxSodium']}${params['maxSugar']}${params['maxCholesterol']}${params['maxFat']}${params['maxCarbs']}`, {
+    fetch(`https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/searchComplex?number=20&ranking=2&instructionsRequired=true${params['includeIngredients']}${params['maxCalories']}${params['maxSodium']}${params['maxSugar']}${params['maxCholesterol']}${params['maxFat']}${params['maxCarbs']}${params['type']}`, {
       "method": "GET",
       "headers": {
         "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
@@ -52,7 +52,7 @@ export class Fetch {
 
   findRecipeID(ingredientsArr){
     let ingredients = encodeURIComponent(ingredientsArr);
-    fetch(`https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?instructionsRequired=true&ranking=2&addRecipeInformation=true&number=20&includeIngredients=${ingredients}`, {
+    fetch(`https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?instructionsRequired=true&ranking=2&addRecipeInformation=true&number=10&includeIngredients=${ingredients}`, {
       "method": "GET",
       "headers": {
         "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",

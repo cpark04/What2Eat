@@ -26,10 +26,12 @@ function bindEvents(){
 
 function getComplexClick(e) {
   e.preventDefault();
+  e.stopPropagation();
   let hiddenBox = document.querySelectorAll('.show');
   hiddenBox.forEach(el => el.classList.remove('hide'));
   let params = {}
   params['includeIngredients'] = ingredientParams();
+  params['type'] = mealTypeParam();
   params['maxCalories'] = document.getElementById('max-cal').value;
   params['maxSodium'] = document.getElementById('max-sodium').value;
   params['maxSugar'] = document.getElementById('max-sugar').value;
@@ -42,6 +44,7 @@ function getComplexClick(e) {
 
 function getIngredClick(e) {
   e.preventDefault();
+  e.stopPropagation();
   let hiddenBox = document.querySelectorAll('.show');
   hiddenBox.forEach(el => el.classList.remove('hide'));
   let ingredients = ingredientParams();
@@ -49,9 +52,10 @@ function getIngredClick(e) {
 }
 
 function toggleFilter(e) {
+  e.preventDefault();
+  e.stopPropagation();
   let filterBox = document.getElementById('filter-box-render');
   let ingredButton = document.getElementById('ingred-button');
-  console.log(ingredButton)
   filterBox.classList.toggle('hide');
   ingredButton.classList.toggle('hide');
 }
@@ -62,6 +66,15 @@ function ingredientParams(){
     ingredients.push(ingred.value)
   });
   return ingredients
+}
+
+function mealTypeParam(){
+  let mealType;
+  document.querySelectorAll('#filter-form select option').forEach((el) => {
+    if (el.selected) mealType = el.value;
+  })
+  console.log(mealType);
+  return mealType;
 }
 
 function modalToggle(){
