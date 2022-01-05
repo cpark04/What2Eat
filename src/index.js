@@ -1,6 +1,7 @@
 import {Fetch} from "./scripts/fetch.js"
 import { Util } from "./scripts/util.js";
 
+
 let util = new Util();
 let fetch = new Fetch();
 
