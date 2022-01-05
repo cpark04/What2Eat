@@ -88,9 +88,11 @@ function cuisineParam(){
 
 function modalToggle(){
   var modal = document.getElementById("myModal");
+  var popup = document.getElementById("myModal-popup");
   var btn1 = document.getElementById("ingred-button");
   var btn2 = document.getElementById("complex-button");
-  var span = document.getElementsByClassName("close")[0];
+  var span = document.getElementsByClassName("close")[1];
+  var span2 = document.getElementsByClassName("close")[0];
 
   btn1.onclick = function() {
     modal.style.display = "block";
@@ -102,9 +104,14 @@ function modalToggle(){
     modal.style.display = "none";
     util.clearData();
   }
+  span2.onclick = function() {
+    popup.style.display = "none";
+    util.clearData();
+  }
   window.onclick = function(event) {
-    if (event.target == modal) {
+    if (event.target == modal || event.target == popup) {
       modal.style.display = "none";
+      popup.style.display = "none";
       util.clearData();
     }
   }
