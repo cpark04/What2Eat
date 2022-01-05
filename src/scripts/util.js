@@ -78,8 +78,8 @@ export class Util {
     let readyNumber = document.getElementById('ready-number');
     let servingsNumber = document.getElementById('servings-number');
     timeNumber.innerText = prepTime;
-    readyNumber.innerText = prepTime;
-    servingsNumber.innerText = prepTime;
+    readyNumber.innerText = cookTime;
+    servingsNumber.innerText = servings;
   }
 
   renderDirections(directions){
@@ -108,7 +108,8 @@ export class Util {
   }
 
   clearData(){
-    let ids = ['title-render', 'picture', 'ingredient-list', 'directions', 'source-url'];
+    let ids = ['title-render', 'picture', 'ingredient-list', 'directions', 'source-url',
+      'time-number', 'ready-number', 'servings-number'];
     ids.forEach((id) => {
       let div = document.getElementById(`${id}`);
       div.innerText = "";
