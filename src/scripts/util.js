@@ -45,6 +45,7 @@ export class Util {
     this.renderIngredients(ingredients);
     this.renderDirections(directions);
     this.renderSource(sourceURL);
+    this.renderPrepInfo(prepTime, cookTime, servings);
   }
   
   renderPicture(picture) {
@@ -72,8 +73,13 @@ export class Util {
     })
   }
 
-  renderNutrition(nutrition) {
-
+  renderPrepInfo(prepTime, cookTime, servings) {
+    let timeNumber = document.getElementById('time-number');
+    let readyNumber = document.getElementById('ready-number');
+    let servingsNumber = document.getElementById('servings-number');
+    timeNumber.innerText = prepTime;
+    readyNumber.innerText = prepTime;
+    servingsNumber.innerText = prepTime;
   }
 
   renderDirections(directions){

@@ -1,7 +1,20 @@
+/*!***************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/html.css ***!
+  \***************************************************************************************************/
+html {
+    height: 100%;
+}
+
 body{
   font-family: 'Noto Sans Display', sans-serif;
   font-family: 'Open Sans', sans-serif;
-  background-color: rgb(253, 248, 254);
+  /* background-color: rgb(253, 248, 254); */
+  /* background-image: linear-gradient(red, yellow) */
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background: linear-gradient(rgb(254, 252, 255), rgb(248, 215, 255))
 }
 
 section{
@@ -65,7 +78,7 @@ header{
   display: flex;
   justify-content: center;
   width: 100%;
-  font-size: 45px;
+  font-size: 70px;
   font-weight: bold;
 }
 
@@ -219,9 +232,16 @@ input[type=submit], select{
   height:100px;
 }
 
+.title{
+  font-family: 'Licorice', cursive;
+}
+
 .source-url{
   padding-right: 50px;
 }
+/*!****************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/modal.css ***!
+  \****************************************************************************************************/
 .modal {
   display: none; 
   position: fixed; 
@@ -257,6 +277,7 @@ input[type=submit], select{
   text-decoration: none;
   cursor: pointer;
 }
+/*!*************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
+  \*************************************************************************************************************************************/
 
-
-/*# sourceMappingURL=main.css.map*/
