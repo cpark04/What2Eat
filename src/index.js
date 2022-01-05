@@ -6,10 +6,6 @@ let fetch = new Fetch();
 
 document.addEventListener("DOMContentLoaded", async () => {
   await fetch.getIngredients();
-  // new Choices('#select-box', {
-  //   placeholderValue: "search for ingredients",
-  //   allowHTML: true
-  // })
   modalToggle();
   bindEvents();  
 });
