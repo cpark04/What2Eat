@@ -1,6 +1,6 @@
 import {Fetch} from "./scripts/fetch.js"
 import { Util } from "./scripts/util.js";
-import {Choices} from "./../node_modules/choices.js/public/assets/scripts/choices.min.js"
+
 let util = new Util();
 let fetch = new Fetch();
 
