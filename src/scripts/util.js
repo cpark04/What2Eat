@@ -1,5 +1,5 @@
 export class Util {
-  
+  // comment
   ingredientCheckbox(ingredients) {
     let select = document.querySelector(".select-box");
     ingredients.forEach((ingredient) => {
