@@ -29,8 +29,17 @@
   margin: 15% auto; 
   padding: 80px;
   border: 1px solid #888;
-  width: 1000px;
+  width: 60%;
   border-radius: 30px !important;  
+}
+
+.popup-content {
+  background-color: rgb(253, 248, 254);
+  margin: 15% auto; 
+  padding: 0px 20px 50px 20px;
+  border: 1px solid #888;
+  width: 40%;
+  border-radius: 30px !important;
 }
 
 .close {

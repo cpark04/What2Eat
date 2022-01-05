@@ -25,6 +25,19 @@ header{
   justify-content: center;
 }
 
+footer{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 200px;
+}
+
+#footer-icon{
+  display: flex;
+  justify-content: space-evenly;
+  width: 20%;
+}
+
 #picture img{
   /* width: 480px;
   height: 480x; */

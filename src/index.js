@@ -21,8 +21,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 function bindEvents(){
   document.getElementById('select-box-form').addEventListener('submit', e => getIngredClick(e));
-  document.getElementById('filter-button').addEventListener('click', e => toggleFilter(e))
-  document.getElementById('complex-button').addEventListener('click', e => getComplexClick(e))
+  document.getElementById('filter-button').addEventListener('click', e => toggleFilter(e));
+  document.getElementById('complex-button').addEventListener('click', e => getComplexClick(e));
+  document.getElementById('about-button').addEventListener('click', e => openPopup(e));
 }
 
 function getComplexClick(e) {
@@ -87,12 +88,12 @@ function cuisineParam(){
 }
 
 function modalToggle(){
-  var modal = document.getElementById("myModal");
-  var popup = document.getElementById("myModal-popup");
-  var btn1 = document.getElementById("ingred-button");
-  var btn2 = document.getElementById("complex-button");
-  var span = document.getElementsByClassName("close")[1];
-  var span2 = document.getElementsByClassName("close")[0];
+  let modal = document.getElementById("myModal");
+  let popup = document.getElementById("myModal-popup");
+  let btn1 = document.getElementById("ingred-button");
+  let btn2 = document.getElementById("complex-button");
+  let span = document.getElementsByClassName("close")[1];
+  let span2 = document.getElementsByClassName("close")[0];
 
   btn1.onclick = function() {
     modal.style.display = "block";
@@ -115,4 +116,11 @@ function modalToggle(){
       util.clearData();
     }
   }
+}
+
+function openPopup(e){
+  e.preventDefault();
+  e.stopPropagation();
+  let popup = document.getElementById("myModal-popup");
+  popup.style.display = "block";
 }
