@@ -27,13 +27,30 @@
       <form action="" id="select-box-form">
         <select class="select-box" name="demo-2" id="select-box" multiple>
         </select>
-        <input type="submit" id="ingred-button" class="button" value="Recommend a Recipe">
-        <button id="filter-button" class='button'>Need more options?</button>
+        <div class="button-box">
+          <input type="submit" id="ingred-button" class="button" value="Recommend a Recipe">
+          <button id="filter-button" class='button'>Need more options?</button>
+        </div>
       </form>
     </div>
     
     <div id="filter-box-render" class='hide'>
-      <form action="">
+      <form action="" id="filter-form">
+        <!-- <label for="">Meal Type
+          <select name="" id="">
+            <option value="">Main Course</option>
+            <option value="">Side Dish</option>
+            <option value="">Dessert</option>
+            <option value="">Appetizer</option>
+            <option value="">Salad</option>
+            <option value="">Bread</option>
+            <option value="">Breakfast</option>
+            <option value="">Soup</option>
+            <option value="">Beverage</option>
+            <option value="">Sauce</option>
+            <option value="">Drink</option>
+          </select>
+        </label> -->
         <label for="">Max Calories
           <input type="text" id="max-cal">
         </label>
@@ -52,28 +69,43 @@
         <label for="">Max Carbs (g)
           <input type="text" id="max-carbs">
         </label>
-        <input type="submit" id="complex-button" value="Search for Recipe">
+        <input type="submit" id="complex-button" class='button' value="Search for Recipe">
       </form>
     </div>
 
     <div id="myModal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
-
         <div id="title-render"></div>
-    
         <div id="pic-ingred-render">
+
           <div id="picture" class="pic-ingred1"></div>
-    
-          <div id="measurements" class="pic-ingred2">
+          
+          <div id="title-prep" class="pic-ingred2">
+            <div id="prep-info">
+              <div id="prep-time" class="prep-info">
+                <div id='time-number' class='number-info'>15</div>
+                min prep time
+              </div>
+              <div id="prep-ready" class="prep-info">
+                <div id='ready-number' class='number-info'>50</div>
+                min cooking time
+              </div>
+              <div id="prep-servings" class="prep-info">
+                <div id='servings-number' class='number-info'>2</div>
+                servings
+              </div>
+            </div>
+          </div>
+
+        </div>
+        
+        <div id="info-render">
+
+          <div id="ingredients">
             <ul id="ingredient-list"></ul>
           </div>
-        </div>
-    
-        <div id="info-render">
-          <div id="nutrition">
-            
-          </div>
+
           <div id="directions">
             <ol id="directions-list"></ol>
           </div>

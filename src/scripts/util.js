@@ -31,6 +31,9 @@ export class Util {
     let directions = [];
     let sourceURL = mealData.sourceUrl;
     let picture = mealData.image;
+    let prepTime = mealData.preparationMinutes;
+    let cookTime = mealData.cookingMinutes;
+    let servings = mealData.servings;
     if (mealData.analyzedInstructions.length < 1) {
       directions = [`Sorry, this recipe has no instructions. Please try the source page at ${sourceURL}`];
     } else {
@@ -59,8 +62,8 @@ export class Util {
   }
 
   renderIngredients(ingredients) {
+    let div = document.querySelector('#ingredients')
     let ul = document.querySelector('#ingredient-list');
-    ul.append("Ingredients:")
     ingredients.forEach((el) => {
       let li = document.createElement('li');
       li.innerText = el;

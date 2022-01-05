@@ -66,10 +66,14 @@ function ingredientParams(){
 
 function modalToggle(){
   var modal = document.getElementById("myModal");
-  var btn = document.getElementById("ingred-button");
+  var btn1 = document.getElementById("ingred-button");
+  var btn2 = document.getElementById("complex-button");
   var span = document.getElementsByClassName("close")[0];
 
-  btn.onclick = function() {
+  btn1.onclick = function() {
+    modal.style.display = "block";
+  }
+  btn2.onclick = function() {
     modal.style.display = "block";
   }
   span.onclick = function() {
