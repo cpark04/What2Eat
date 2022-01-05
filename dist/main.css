@@ -187,8 +187,8 @@ input[type=submit], select{
 }
 
 #prep-ready{
-  border-left: 1px solid;
-  border-right: 1px solid;
+  /* border-left: 1px solid;
+  border-right: 1px solid; */
   /* padding-left: 10%;
   padding-right: 10%; */
 }
@@ -196,13 +196,22 @@ input[type=submit], select{
 .prep-info{
   display:flex;
   flex-direction: column;
-  width: 100%;
-  justify-content: center;
-  padding: 30px;
+  width: 33%;
+  align-items: center;
+}
+
+.line-div{
+  display: flex;
+  width:0.5px;
+  border: 1px solid black;
 }
 
 .number-info{
   font-size: 50px;
+}
+
+.prep-text{
+  font-size: small;
 }
 /*!****************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/modal.css ***!

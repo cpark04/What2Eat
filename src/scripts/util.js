@@ -88,9 +88,6 @@ export class Util {
       li.innerText = dir;
       newOl.append(li);
     })
-    // let div = document.getElementById('directions');
-    // div.innerText = directions;
-
   }
 
   clearData(){
