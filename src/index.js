@@ -11,8 +11,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     placeholderValue: "search for ingredients",
     allowHTML: true
   })
+  await bindEvents();  
   modalToggle();
-  bindEvents();  
 });
 
 
