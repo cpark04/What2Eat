@@ -268,6 +268,30 @@ input[type=submit], select{
 .zoom:hover {
   transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
+
+a:link {
+  color: #f581a5;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #f581a5;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #f581a5;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: #f581a5;
+  background-color: transparent;
+  text-decoration: underline;
+}
 /*!****************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/choices.js/public/assets/styles/choices.css ***!
   \****************************************************************************************************************************************/
