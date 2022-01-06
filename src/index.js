@@ -34,6 +34,7 @@ function getComplexClick(e) {
   params['includeIngredients'] = ingredientParams();
   params['type'] = mealTypeParam();
   params['cuisine'] = cuisineParam();
+  // params['diet'] = dietParam();
   params['maxCalories'] = document.getElementById('max-cal').value;
   params['maxSodium'] = document.getElementById('max-sodium').value;
   params['maxSugar'] = document.getElementById('max-sugar').value;
@@ -83,6 +84,14 @@ function cuisineParam(){
     if (el.selected) cuisine = el.value;
   })
   return cuisine;
+}
+
+function dietParam(){
+  let diet;
+  document.querySelectorAll('#diet-list option').forEach((el) => {
+    if (el.selected) diet = el.value;
+  })
+  return diet;
 }
 
 function togglePopup(){
