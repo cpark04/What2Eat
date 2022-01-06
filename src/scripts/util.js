@@ -1,5 +1,4 @@
 export class Util {
-  // comment
   ingredientCheckbox(ingredients) {
     let select = document.querySelector(".select-box");
     ingredients.forEach((ingredient) => {
@@ -46,7 +45,7 @@ export class Util {
     this.renderDirections(directions);
     this.renderSource(sourceURL);
     this.renderPrepInfo(prepTime, cookTime, servings);
-    this.modalToggle();
+    this.modalShow();
   }
   
   renderPicture(picture) {
@@ -66,7 +65,6 @@ export class Util {
 
   renderIngredients(ingredients) {
     let div = document.querySelector('#ingredients')
-    // let ul = document.querySelector('#ingredient-list');
     let ul = document.createElement('ul');
     ul.setAttribute('id', 'ingredient-list');
     div.append('Ingredients:');
@@ -112,37 +110,9 @@ export class Util {
     div.append(a);
   }
 
-  modalToggle(){
-    
+  modalShow(){
     let modal = document.getElementById("myModal");
     modal.style.display = "block";
-    // let popup = document.getElementById("myModal-popup");
-    // let btn1 = document.getElementById("ingred-button");
-    // let btn2 = document.getElementById("complex-button");
-    // let span = document.getElementsByClassName("close")[1];
-    // let span2 = document.getElementsByClassName("close")[0];
-
-    // btn1.onclick = function() {
-    //   modal.style.display = "block";
-    // }
-    // btn2.onclick = function() {
-    //   modal.style.display = "block";
-    // }
-    // span.onclick = function() {
-    //   modal.style.display = "none";
-    //   util.clearData();
-    // }
-    // span2.onclick = function() {
-    //   popup.style.display = "none";
-    //   util.clearData();
-    // }
-    // window.onclick = function(event) {
-    //   if (event.target == modal || event.target == popup) {
-    //     modal.style.display = "none";
-    //     popup.style.display = "none";
-    //     util.clearData();
-    //   }
-    // }
   }
 
   clearData(){
