@@ -1,4 +1,8 @@
-# javascript-project-What2Eat
+# javascript-project-what2Eat
+
+## Live Link
+
+[what2Eat](https://cpark04.github.io/What2Eat/ "what2Eat Home Page")
 
 
 ## Background
