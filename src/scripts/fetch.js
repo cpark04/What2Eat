@@ -15,7 +15,7 @@ export class Fetch {
     util.ingredientCheckbox(ingredients);
   }
 
-  findComplexID(params){
+  async findComplexID(params){
     for (let key in params){
       if (key === 'includeIngredients' && params[key].length > 0){
         params[key] = `&${key}=${encodeURIComponent(params[key])}`;
@@ -41,7 +41,7 @@ export class Fetch {
     });
   }
 
-  findRecipeID(ingredientsArr){
+  async findRecipeID(ingredientsArr){
     let ingredients = encodeURIComponent(ingredientsArr);
     fetch(`https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?instructionsRequired=true&ranking=2&addRecipeInformation=true&number=10&includeIngredients=${ingredients}`, {
       "method": "GET",
@@ -60,7 +60,7 @@ export class Fetch {
     });
   }
 
-  getRecipeData(id){
+  async getRecipeData(id){
     fetch(`https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/${id}/information`, {
         "method": "GET",
         "headers": {

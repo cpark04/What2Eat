@@ -1,9 +1,8 @@
 import {Fetch} from "./scripts/fetch.js"
 import { Util } from "./scripts/util.js";
-
-
 let util = new Util();
 let fetch = new Fetch();
+
 
 document.addEventListener("DOMContentLoaded", async () => {
   await fetch.getIngredients();
@@ -11,8 +10,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     placeholderValue: "search for ingredients",
     allowHTML: true
   })
-  await bindEvents();  
-  modalToggle();
+  bindEvents();  
+  togglePopup();
 });
 
 
@@ -24,6 +23,8 @@ function bindEvents(){
   document.getElementById('filter-button').addEventListener('click', e => toggleFilter(e));
   document.getElementById('complex-button').addEventListener('click', e => getComplexClick(e));
   document.getElementById('about-button').addEventListener('click', e => openPopup(e));
+  // document.getElementsByClassName("close")[0].addEventListener('click', e => closePopup(e));
+  // document.getElementById('source-url').addEventListener('load', modalToggle());
 }
 
 function getComplexClick(e) {
@@ -87,20 +88,42 @@ function cuisineParam(){
   return cuisine;
 }
 
-function modalToggle(){
+// function modalToggle(){
+  // let modal = document.getElementById("myModal");
+  // let popup = document.getElementById("myModal-popup");
+  // let btn1 = document.getElementById("ingred-button");
+  // let btn2 = document.getElementById("complex-button");
+  // let span = document.getElementsByClassName("close")[1];
+  // let span2 = document.getElementsByClassName("close")[0];
+
+//   btn1.onclick = function() {
+//     modal.style.display = "block";
+//   }
+//   btn2.onclick = function() {
+//     modal.style.display = "block";
+//   }
+  // span.onclick = function() {
+  //   modal.style.display = "none";
+  //   util.clearData();
+  // }
+  // span2.onclick = function() {
+  //   popup.style.display = "none";
+  //   util.clearData();
+  // }
+  // window.onclick = function(event) {
+  //   if (event.target == modal || event.target == popup) {
+  //     modal.style.display = "none";
+  //     popup.style.display = "none";
+  //     util.clearData();
+  //   }
+  // }
+// }
+function togglePopup(){
   let modal = document.getElementById("myModal");
   let popup = document.getElementById("myModal-popup");
-  let btn1 = document.getElementById("ingred-button");
-  let btn2 = document.getElementById("complex-button");
   let span = document.getElementsByClassName("close")[1];
   let span2 = document.getElementsByClassName("close")[0];
 
-  btn1.onclick = function() {
-    modal.style.display = "block";
-  }
-  btn2.onclick = function() {
-    modal.style.display = "block";
-  }
   span.onclick = function() {
     modal.style.display = "none";
     util.clearData();
@@ -109,6 +132,7 @@ function modalToggle(){
     popup.style.display = "none";
     util.clearData();
   }
+
   window.onclick = function(event) {
     if (event.target == modal || event.target == popup) {
       modal.style.display = "none";
