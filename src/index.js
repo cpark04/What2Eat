@@ -40,7 +40,6 @@ function getComplexClick(e) {
   params['maxCholesterol'] = document.getElementById('max-chol').value;
   params['maxFat'] = document.getElementById('max-fat').value;
   params['maxCarbs'] = document.getElementById('max-carbs').value;
-  console.log(params)
   fetch.findComplexID(params)
 }
 

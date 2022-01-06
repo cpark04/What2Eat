@@ -33,7 +33,6 @@ export class Fetch {
     })
     .then(response => response.json())
     .then((data) => {
-      console.log(data);
       this.getRecipeData(data.results[Math.floor(Math.random() * data.results.length)].id);
     })
     .catch(err => {
@@ -52,7 +51,6 @@ export class Fetch {
     })
     .then(response => response.json())
     .then((data) => {
-      console.log(data);
       this.getRecipeData(data.results[Math.floor(Math.random() * data.results.length)].id);
     })
     .catch(err => {
