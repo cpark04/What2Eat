@@ -36,7 +36,7 @@ export class Fetch {
       this.getRecipeData(data.results[Math.floor(Math.random() * data.results.length)].id);
     })
     .catch(err => {
-      console.error(alert('recipe not found'), err);
+      alert('recipe not found');
     });
   }
 
@@ -54,7 +54,7 @@ export class Fetch {
       this.getRecipeData(data.results[Math.floor(Math.random() * data.results.length)].id);
     })
     .catch(err => {
-      console.error(alert('recipe not found'), err);
+      alert('recipe not found');
     });
   }
 

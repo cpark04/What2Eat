@@ -24,7 +24,6 @@ export class Util {
 
   getMealData(mealData){
     this.clearData();
-    console.log(mealData)
     let title = mealData.title;
     let ingredients = [];
     let directions = [];
