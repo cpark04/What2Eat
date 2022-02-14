@@ -2,7 +2,7 @@
 
 ## Live Link
 
-[what2Eat](https://cpark04.github.io/What2Eat/ "what2Eat Home Page")
+[what2Eat](https://cpark04.github.io/what2Eat/ "what2Eat Home Page")
 
 
 ## Background
