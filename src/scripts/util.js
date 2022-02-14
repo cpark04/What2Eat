@@ -24,6 +24,7 @@ export class Util {
 
   getMealData(mealData){
     this.clearData();
+    console.log(mealData)
     let title = mealData.title;
     let ingredients = [];
     let directions = [];
@@ -37,7 +38,7 @@ export class Util {
     } else {
       mealData.analyzedInstructions[0].steps.forEach((instruction) => directions.push(instruction.step));
     }
-    mealData.extendedIngredients.forEach((ingred) => ingredients.push(ingred.originalString))
+    mealData.extendedIngredients.forEach((ingred) => ingredients.push(ingred.original))
     this.renderPicture(picture);
     this.renderTitle(title);
     this.renderIngredients(ingredients);
