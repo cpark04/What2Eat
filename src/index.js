@@ -97,8 +97,10 @@ function dietParam(){
 function togglePopup(){
   let modal = document.getElementById("myModal");
   let popup = document.getElementById("myModal-popup");
-  let span = document.getElementsByClassName("close")[1];
+  let noRecipe = document.getElementById("no-recipe-found")
+  let span = document.getElementsByClassName("close")[2];
   let span2 = document.getElementsByClassName("close")[0];
+  let span3 = document.getElementsByClassName("close")[1];
 
   span.onclick = function() {
     modal.style.display = "none";
@@ -109,10 +111,16 @@ function togglePopup(){
     util.clearData();
   }
 
+  span3.onclick = function() {
+    noRecipe.style.display = "none";
+    util.clearData();
+  }
+
   window.onclick = function(event) {
-    if (event.target == modal || event.target == popup) {
+    if (event.target == modal || event.target == popup || event.target == noRecipe) {
       modal.style.display = "none";
       popup.style.display = "none";
+      noRecipe.style.display = "none";
       util.clearData();
     }
   }
@@ -124,3 +132,4 @@ function openPopup(e){
   let popup = document.getElementById("myModal-popup");
   popup.style.display = "block";
 }
+

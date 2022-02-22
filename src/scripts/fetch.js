@@ -42,7 +42,7 @@ export class Fetch {
       let loader2 = document.getElementById('loader-second');
       loader.style.display = "none";
       loader2.style.display = "none";
-      alert('recipe not found');
+      this.noRecipeModal();
     });
   }
 
@@ -66,7 +66,7 @@ export class Fetch {
       let loader2 = document.getElementById('loader-second');
       loader.style.display = "none";
       loader2.style.display = "none";
-      alert('recipe not found');
+      this.noRecipeModal();
     });
   }
 
@@ -85,6 +85,11 @@ export class Fetch {
       .catch(err => {
         console.error(err);
       });
+  }
+
+  noRecipeModal() {
+    let noRecipe = document.getElementById('no-recipe-found');
+    noRecipe.style.display = "block";
   }
 
 }
