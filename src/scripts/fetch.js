@@ -16,6 +16,8 @@ export class Fetch {
   }
 
   async findComplexID(params){
+    let loader = document.getElementById('loader-second');
+    loader.style.display = "block";
     for (let key in params){
       if (key === 'includeIngredients' && params[key].length > 0){
         params[key] = `&${key}=${encodeURIComponent(params[key])}`;
@@ -36,11 +38,17 @@ export class Fetch {
       this.getRecipeData(data.results[Math.floor(Math.random() * data.results.length)].id);
     })
     .catch(err => {
+      let loader = document.getElementById('loader-first');
+      let loader2 = document.getElementById('loader-second');
+      loader.style.display = "none";
+      loader2.style.display = "none";
       alert('recipe not found');
     });
   }
 
   async findRecipeID(ingredientsArr){
+    let loader = document.getElementById('loader-first');
+    loader.style.display = "block";
     let ingredients = encodeURIComponent(ingredientsArr);
     fetch(`https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?instructionsRequired=true&ranking=2&addRecipeInformation=true&number=10&includeIngredients=${ingredients}`, {
       "method": "GET",
@@ -54,6 +62,10 @@ export class Fetch {
       this.getRecipeData(data.results[Math.floor(Math.random() * data.results.length)].id);
     })
     .catch(err => {
+      let loader = document.getElementById('loader-first');
+      let loader2 = document.getElementById('loader-second');
+      loader.style.display = "none";
+      loader2.style.display = "none";
       alert('recipe not found');
     });
   }

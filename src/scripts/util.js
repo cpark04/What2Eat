@@ -24,6 +24,8 @@ export class Util {
 
   getMealData(mealData){
     this.clearData();
+    let loader = document.getElementById('loader-first');
+    let loader2 = document.getElementById('loader-second');
     let title = mealData.title;
     let ingredients = [];
     let directions = [];
@@ -45,6 +47,8 @@ export class Util {
     this.renderSource(sourceURL);
     this.renderPrepInfo(prepTime, cookTime, servings);
     this.modalShow();
+    loader.style.display = "none";
+    loader2.style.display = "none";
   }
   
   renderPicture(picture) {
