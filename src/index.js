@@ -46,7 +46,6 @@ function getComplexClick(e) {
 
 function getIngredClick(e) {
   e.preventDefault();
-  e.stopPropagation();
   let hiddenBox = document.querySelectorAll('.show');
   hiddenBox.forEach(el => el.classList.remove('hide'));
   let ingredients = ingredientParams();
@@ -55,7 +54,8 @@ function getIngredClick(e) {
 
 function toggleFilter(e) {
   e.preventDefault();
-  e.stopPropagation();
+  console.log(e)
+  e.target.innerHTML === "Need More Options?" ? e.target.innerHTML = "Need Fewer Options?" : e.target.innerHTML = "Need More Options?"
   let filterBox = document.getElementById('filter-box-render');
   let ingredButton = document.getElementById('ingred-button');
   filterBox.classList.toggle('hide');
